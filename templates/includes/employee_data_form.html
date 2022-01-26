@@ -1,0 +1,21 @@
+        <h3>EMPLOYEE RECORDS</h3>
+        <form id="addemployee" action="{% url 'crud_ajax_create' %}">
+          <div class="row">
+            <div class="form-group col-md-6">
+                <select name="role" class="form-control" type="text">
+                      <option value="" selected disabled>Select Position:</option>
+                      <option value="F">FrontendDev</option>
+                      <option value="B">BackendDev</option>
+                  </select>
+            </div>
+            <div class="form-group col-md-6"><input class="form-control" type="text" name="name" placeholder="Name" ></div>
+          </div>
+          <div class="row">
+              <div class="form-group col-md-6"><input class="form-control" type="number" name="age" min="1" max="100" placeholder="age" ></div>
+              <div class="form-group col-md-6"><input class="form-control" type="text" name="companyname" placeholder="companyname" ></div>
+          </div>
+          <div class="row">
+              <div class="form-group col-md-6"><input class="form-control" type="date" name="birthdate"></div>
+              <div class="form-group col-md-6"><button class="btn btn-success form-control" type="submit">SUBMIT</button></div>
+          </div>
+        </form>

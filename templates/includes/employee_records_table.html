@@ -1,0 +1,27 @@
+        <tr>
+                <th>role</th>
+                <th>name</th>
+                <th>age</th>
+                <th>companyname</th>
+                <th colspan="4">birthdate</th>
+        </tr>
+          {% if employees %}
+          {% for employee in employees %}
+        <tr id="employee-{{employee.id}}">
+              <td class="employeerole employeeData" name="role">{{employee.role}}</td>
+              <td class="employeename employeeData" name="name">{{employee.name}}</td>
+              <td class="employeeage employeeData" name="age">{{employee.age}}</td>
+              <td class="employeecompanyname employeeData" name="companyname">{{employee.companyname}}</td>
+              <td class="employeebirthdate employeeData" name="birthdate">{{employee.birthdate|date:'Y-m-d'}}</td>
+
+              <td align="center">
+                  <button class="btn btn-success form-control" onClick="editemployee({{employee.id}})" data-toggle="modal" data-target="#myModal">EDIT</button>
+              </td>
+              <td align="center">
+                  <button class="btn btn-danger form-control" id="form-delete" data-action="{% url 'crud_ajax_delete' %}" onClick="deleteemployee({{employee.id}})">DELETE</button>
+              </td>
+        </tr>
+          {% endfor %}
+          {% else %}
+            No employees
+          {% endif %}

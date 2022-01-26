@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Django Ajax CRUD{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1>Django Ajax CRUD Employees</h1>
+    <div class="row">
+      <div class="col-md-12 ">
+            {% include 'includes/employee_data_form.html' %}
+      </div>
+      <div class="col-md-12">
+        <h3>RECORDS</h3>
+        <table id="employeeTable" class="table table-striped">
+            {% include 'includes/employee_records_table.html' %}
+        </table>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        {% include 'includes/employee_modal_form.html' %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block javascript %}
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock javascript %}

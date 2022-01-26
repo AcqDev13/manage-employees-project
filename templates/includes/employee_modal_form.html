@@ -1,0 +1,35 @@
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="myModalLabel">Update Record</h4>
+        </div>
+
+        <form id="updateemployee" method="get">
+        <div class="modal-body">
+            <input class="form-control" id="form-id" type="hidden" data-action="{% url 'crud_ajax_update' %}" name="formId"/>
+
+            <label for="role">role</label>
+            <select name="formrole" class="form-control select" id="role-select-box">
+                <option value="" selected disabled>Select Position:</option>
+                <option value="F">FrontendDev</option>
+                <option value="B" >BackendDev</option>
+            </select>
+
+            <label for="name">Name</label>
+            <input class="form-control" id="form-name" type="text" name="formname"/>
+
+            <label for="age">age</label>
+            <input class="form-control" id="form-age" type="number" name="formage" min="1" max="100"/>
+
+            <label for="companyname">companyname</label>
+            <input class="form-control" id="form-companyname" type="text" name="formcompanyname"/>
+
+            <label for="birthdate">birthdate</label>
+            <input class="form-control" id="form-birthdate" type="date" name="formbirthdate"/>
+        </div>
+
+        <div class="modal-footer">
+
+            <button type="submit" id="update_sbt" class="btn btn-primary" >Save changes</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+        </form>
